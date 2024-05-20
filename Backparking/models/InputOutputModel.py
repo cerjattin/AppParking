@@ -9,7 +9,6 @@ class InputsOutputs(db.Model):
     def __init__(self,recorddate,idauthorized_fk):
         self.recorddate = recorddate
         self.idauthorized_fk= idauthorized_fk
-   
 with app.app_context():
     db.create_all()
 

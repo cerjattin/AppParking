@@ -6,12 +6,12 @@ from models.OwnerModel import Owner,OwnerSchema
 ruta_owners = Blueprint("route_owners",__name__)
 
 Owner_schema = OwnerSchema()
-Owner_schema = OwnerSchema(many=True) 
+Owners_schema = OwnerSchema(many=True) 
 
 @ruta_owners.route("/owners" , methods=["GET"])
 def getAllOwners():
     owners = owners.query.all() 
-    result = Owner_schema.dump(owners)
+    result = Owners_schema.dump(owners)
     return jsonify(result)  
 
 @ruta_owners.route('/addowners',methods=['POST'])

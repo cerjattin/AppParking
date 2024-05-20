@@ -6,12 +6,12 @@ from models.CategoryModel import Category,CategorySchema
 ruta_category = Blueprint("route_category",__name__)
 
 category_schema = CategorySchema()
-category_schema = CategorySchema(many=True) 
+categorys_schema = CategorySchema(many=True) 
 
 @ruta_category.route("/categories" , methods=["GET"])
 def getAllCategories():
     categories = Category.query.all() 
-    result = category_schema.dump(categories)
+    result = categorys_schema.dump(categories)
     return jsonify(result)  
 
 @ruta_category.route('/addCategory',methods=['POST'])
