@@ -1,9 +1,9 @@
 from flask import Flask,Blueprint,request,redirect,render_template,jsonify
 from config.db import app,db,ma
 
-from models.InputOutputModel import InputsOutputs,InputsOutputsSchema
+from models.InputOutputModel import InputsOutputsSchema,InputsOutputs
 
-ruta_inputsoutput = Blueprint("route_inputoutput",__name__)
+ruta_inputsoutput = Blueprint("route_inputsoutput",__name__)
 
 inputoutput_schema = InputsOutputsSchema
 inputoutputs_schema = InputsOutputsSchema(many=True) 

@@ -3,8 +3,8 @@ from config.db import db,app,ma
 class Payments(db.Model):
     __tablename__="tblpayments"
     id = db.Column(db.Integer, primary_key = True)
-    datepaid = db.Column(db.datetime())
-    valuepaid = db.Column(db.integer)
+    datepaid = db.Column(db.Date)
+    valuepaid = db.Column(db.Integer)
     idUser_fk = db.Column(db.Integer, db.ForeignKey('tblusers.id'))
     idOwner_fk = db.Column(db.Integer,db.ForeignKey('tblowners.id'))
     def __init__(self, datepaid,idUser_fk,idOwner_fk): 

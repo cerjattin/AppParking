@@ -2,7 +2,7 @@ from config.db import db,app,ma
 class InputsOutputs(db.Model):
     __tablename__='tblinputsaoutputs'
     id = db.Column(db.Integer,primary_key=True)
-    recorddate = db.Column(db.datetime)
+    recorddate = db.Column(db.DateTime)
     typerecord = db.Column(db.String(10))
     idauthorized_fk = db.Column(db.Integer,db.ForeignKey('tblauthorized.id'))
     
